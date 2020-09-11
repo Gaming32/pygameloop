@@ -22,19 +22,6 @@ class Player(GameObject):
     def fixed_update(self):
         if not self.movex and not self.movey:
             return
-        move_angle_x = 0.0
-        move_angle_y = 0.0
-        if self.movex:
-            move_angle_x += math.pi/2
-            if self.movex < 0:
-                move_angle_x -= math.pi
-        if self.movey < 0:
-            move_angle_y += math.pi
-        if not self.movex:
-            move_angle_x = move_angle_y
-        elif not self.movey:
-            move_angle_y = move_angle_x
-        move_angle = (move_angle_x + move_angle_y) / 2.0
         move_angle = math.atan2(self.movex, self.movey)
         self.x += math.sin(move_angle) * self.speed
         self.y += math.cos(move_angle) * self.speed
