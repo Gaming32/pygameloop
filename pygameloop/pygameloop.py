@@ -1,4 +1,3 @@
-from collections.abc import MutableMapping
 from typing import Any, Iterable, Mapping, Type, Union
 
 import pygame
@@ -179,5 +178,5 @@ window: pygame.Surface = _Wrapper.__new__(_Wrapper)
 
 __all__ = [
     'Scene', 'GameObject',
-    'singleton_scene', 'time'
+    'singleton_scene', 'config', 'time', 'window'
 ]
